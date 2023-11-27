@@ -22,25 +22,44 @@ let attendees = [
   ]
   
   
-  //find the attendees born in the 1970's using filter
+  //find the attendees born in the 1970's using filter\
+  let seventies = attendees.filter(function(attendee){
+    return attendee.birthYear >= 1970 && attendee.birthYear < 1980
+  })
   
   
   //from the attendees born in the 70's, using filter find me the accountant and console.log their first name
+  let accountant = seventies.filter(function(attendee){
+    return attendee.occupation === "Accountant"
+  })
   
   
   //using map return a list of peoples first names and birthYear in the format of Name: birthYear
+  let nameYear = attendees.map(function(attendee){
+    return attendee.firstName + ": " + attendee.birthYear
+  })
   
   
   //using some find out if there is someone with the occupation of infant
+  let infant = attendees.some(function(attendee){
+    return attendee.occupation === "Infant"
+  })
   
   
   //find the array index of the a Chief Biscuit Dunker named Francis
+  let chief = attendees.findIndex(function(attendee){
+    return attendee.occupation === "Chief Biscuit Dunker" && attendee.firstName === "Francis"
+  })
   
   
   //using sort return a list of the student attendees by birth year in ascending order
+  let students = attendees.filter(function(attendee){
+    return attendee.occupation === "Student"
+  })
 
 
   //Return a list of beings that are not from Earth who are Gender X
-
-  //
+  let nonEarthGenderX = attendees.filter(function(attendee){
+    return attendee.homePlanet === "Earth" && attendee.gender === "X";
+  });
   
